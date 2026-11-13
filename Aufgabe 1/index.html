@@ -1,27 +1,51 @@
 <!doctype html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Ladekosten-Rechner</title>
-    </head>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Ladekosten-Rechner</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
 <body>
-    <h1>Ladekosten-Rechner</h1>
-    <label for="name"> Akkugröße (kWh)
-        <input type="number" id="1" name="Akkugröße in kWh" required/>
-    </label> 
-    <br>
-    <label for="name">  Ladestand von/bis (%)
-        <input type="number" id="2" name="Ladestand von/bis (%)" required/>
-    </label>
-    <br>
-    <label for="name">  Strompreis (€ pro kWh)
-        <input type="number" id="3" name="Strompreis (€ pro kWh)" required/>
-    </label> 
-    <br>
-    <label for="name">  Ladeleistung (kW)
-        <input type="number" id="4" name="Ladeleistung (kW)" required/>
-    </label>
+    <div class="container">
+        <div class="heading">
+            <h1>Ladekosten-Rechner</h1>
+        </div>
+        <div class="box">
+            <p class="field">
+                <label for="name"> Akkugröße (kWh)
+                    <input type="number" id="Akkugröße" name="Akkugröße in kWh" required />
+                </label>
+                <br>
+                <br>
+                <label for="name"> Ladestand von (%)
+                    <input type="number" id="Ladestand" name="Ladestand von (%)" required />
+                    <br>
+                    <br>
+                    <label for="name"> Ladestand bis (%)
+                        <input type="number" id="Ladestand" name="Ladestand bis (%)" required />
+                    </label>
+                    <br>
+                    <br>
+                    <label for="name"> Strompreis (€ pro kWh)
+                        <input type="number" id="Strompreis" name="Strompreis (€ pro kWh)" required />
+                    </label>
+                    <br>
+                    <br>
+                    <label for="name"> Ladeleistung (kW)
+                        <input type="number" id="Ladeleistung" name="Ladeleistung (kW)" required />
+                    </label>
+            </p>
+            <br>
+            <br>
+        </div>
+        <div class="button">
+            <button type="button">Ausrechnen</button>
+        </div>
+    </div>
 
 </body>
+
 </html>
