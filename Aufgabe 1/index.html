@@ -9,42 +9,37 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="heading">
-            <h1>Ladekosten-Rechner</h1>
+    <form class="formular">
+        <h1>Ladekosten-Rechner</h1>
+        <div class="form-group">
+            <label for="name"> Akkugröße (kWh)
+                <input type="number" id="Akkugröße" name="Akkugröße in kWh" required />
+            </label>
         </div>
-        <div class="box">
-            <p class="field">
-                <label for="name"> Akkugröße (kWh)
-                    <input type="number" id="Akkugröße" name="Akkugröße in kWh" required />
-                </label>
-                <br>
-                <br>
-                <label for="name"> Ladestand von (%)
-                    <input type="number" id="Ladestand" name="Ladestand von (%)" required />
-                    <br>
-                    <br>
-                    <label for="name"> Ladestand bis (%)
-                        <input type="number" id="Ladestand" name="Ladestand bis (%)" required />
-                    </label>
-                    <br>
-                    <br>
-                    <label for="name"> Strompreis (€ pro kWh)
-                        <input type="number" id="Strompreis" name="Strompreis (€ pro kWh)" required />
-                    </label>
-                    <br>
-                    <br>
-                    <label for="name"> Ladeleistung (kW)
-                        <input type="number" id="Ladeleistung" name="Ladeleistung (kW)" required />
-                    </label>
-            </p>
-            <br>
-            <br>
+        <div class="form-group">
+            <label for="name"> Ladestand von (%)
+                <input type="number" id="Ladestand" name="Ladestand von (%)" required />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="name"> Ladestand bis (%)
+                <input type="number" id="Ladestand" name="Ladestand bis (%)" required />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="name"> Strompreis (€ pro kWh)
+                <input type="number" id="Strompreis" name="Strompreis (€ pro kWh)" required />
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="name"> Ladeleistung (kW)
+                <input type="number" id="Ladeleistung" name="Ladeleistung (kW)" required />
+            </label>
         </div>
         <div class="button">
             <button type="button">Ausrechnen</button>
         </div>
-    </div>
+    </form>
 
 </body>
 
