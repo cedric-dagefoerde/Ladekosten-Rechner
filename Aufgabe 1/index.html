@@ -13,18 +13,18 @@
     <form class="formular">
         <h1>Ladekosten-Rechner</h1>
         <div class="form-group">
-            <label for="name"> Akkugröße (kWh)
-                <input type="number" id="Akkugröße" name="Akkugröße in kWh" required />
+            <label for="name"> Akkukapazität (kWh)
+                <input type="number" id="Akkukapazitaet" name="Akkukapazität in kWh" required />
             </label>
         </div>
         <div class="form-group">
             <label for="name"> Ladestand von (%)
-                <input type="number" id="Ladestand" name="Ladestand von (%)" required />
+                <input type="number" id="LadestandVon" name="Ladestand von (%)" required />
             </label>
         </div>
         <div class="form-group">
             <label for="name"> Ladestand bis (%)
-                <input type="number" id="Ladestand" name="Ladestand bis (%)" required />
+                <input type="number" id="LadestandBis" name="Ladestand bis (%)" required />
             </label>
         </div>
         <div class="form-group">
@@ -38,7 +38,12 @@
             </label>
         </div>
         <div class="button">
-            <button type="button">Ausrechnen</button>
+            <button type="button" id="ausrechnen" >Ausrechnen</button>
+        </div>
+        <div id="ergebnis">
+            <p><strong>geladene kWh:</strong> <span id="ausgabe-kWh">0.00</span> kWh</p>
+            <p><strong>Ladekosten:</strong> <span id="ausgabe-kosten">0.00</span> €</p>
+            <p><strong>Ladedauer:</strong> <span id="ausgabe-dauer">0 Std. 0Min.</span></p>
         </div>
     </form>
 
