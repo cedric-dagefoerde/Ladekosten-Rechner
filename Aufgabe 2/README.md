@@ -1,4 +1,4 @@
-Bei MDN gesucht wie man in HTML eine Liste erzeugt, habe dann den Befehl <ul> gefunden der eine ungeordnete Liste erzeugt für die Ladevorgänge.
+Bei MDN gesucht wie man in HTML eine Liste erzeugt, habe dann den Befehl < ul git> gefunden der eine ungeordnete Liste erzeugt für die Ladevorgänge.
 
 Bei MDN Herausgefunden, dass man in JS mit [] eine leere Liste erzeugt in der man beliebig viele Einträge speichern kann.
 
