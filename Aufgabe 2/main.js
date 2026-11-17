@@ -71,3 +71,49 @@ document.getElementById("ausrechnen").addEventListener("click", function () {
     document.getElementById("ausgabe-dauer").textContent = stunden + " Std. " + minuten + " Min.";
 });
 
+let ladevorgänge = [];
+
+document.getElementById("speichern").addEventListener("click", function () {
+    const kwh = Number(document.getElementById("ausgabe-kWh").textContent);
+    const kosten = Number(document.getElementById("ausgabe-kosten").textContent);
+
+    const heute = new Date().toLocaleDateString("de-DE");
+    const neuerEintrag = {
+        datum: heute,
+        kwh: kwh,
+        kosten: kosten
+    };
+    ladevorgänge.push(neuerEintrag);
+    listeZeichnen();
+});
+
+function listeZeichnen() {
+    const ul = document.getElementById("liste");
+    ul.textContent = "";
+
+    let gesamtkWh = 0;
+    let gesamtKosten = 0;
+
+    for (let i = 0; i < ladevorgänge.length; i++) {
+        const eintrag = ladevorgänge[i];
+        gesamtkWh = gesamtkWh + eintrag.kwh;
+        gesamtKosten = gesamtKosten + eintrag.kosten;
+
+        const li = document.createElement("li")
+        li.textContent = eintrag.datum + " - " + eintrag.kwh.toFixed(2) + " kWh - " + eintrag.kosten.toFixed(2) + " € ";
+
+        const löschButton = document.createElement("button");
+        löschButton.type = "button";
+        löschButton.textContent = "Löschen";
+        löschButton.addEventListener("click", function () {
+            ladevorgänge.splice(i, 1);
+            listeZeichnen();
+        });
+
+        li.appendChild(löschButton);
+        ul.appendChild(li);
+    }
+
+    document.getElementById("summe-kwh").textContent = gesamtkWh.toFixed(2);
+    document.getElementById("summe-kosten").textContent = gesamtKosten.toFixed(2);
+}
