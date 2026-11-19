@@ -73,15 +73,21 @@ document.getElementById("ausrechnen").addEventListener("click", function () {
 
 let ladevorgänge = [];
 
+let gespeicherteDaten = localStorage.getItem("meineLadevorgänge");
+if (gespeicherteDaten) {
+    ladevorgänge = JSON.parse(gespeicherteDaten);
+    listeZeichnen();
+}
+
 document.getElementById("speichern").addEventListener("click", function () {
     const kwh = Number(document.getElementById("ausgabe-kWh").textContent);
     const kosten = Number(document.getElementById("ausgabe-kosten").textContent);
 
-    if (kwh <=0) {
+    if (kwh <= 0) {
         alert("Bitte zuerst auf ausrechnen klicken!");
         return;
     }
-    
+
     const heute = new Date().toLocaleDateString("de-DE");
     const neuerEintrag = {
         datum: heute,
@@ -89,6 +95,10 @@ document.getElementById("speichern").addEventListener("click", function () {
         kosten: kosten
     };
     ladevorgänge.push(neuerEintrag);
+
+    let text = JSON.stringify(ladevorgänge);
+    localStorage.setItem("meineLadevorgänge", text);
+
     listeZeichnen();
 });
 
