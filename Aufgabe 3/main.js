@@ -120,6 +120,7 @@ function listeZeichnen() {
         const löschButton = document.createElement("button");
         löschButton.type = "button";
         löschButton.textContent = "Löschen";
+        löschButton.classList.add("listen-lösch-btn");
         löschButton.addEventListener("click", function () {
             ladevorgänge.splice(i, 1);
             listeZeichnen();
@@ -132,3 +133,18 @@ function listeZeichnen() {
     document.getElementById("summe-kwh").textContent = gesamtkWh.toFixed(2);
     document.getElementById("summe-kosten").textContent = gesamtKosten.toFixed(2);
 }
+
+document.getElementById("exportBtn").addEventListener("click", function () {
+    let jsonText = JSON.stringify(ladevorgänge);
+    document.getElementById("jsonAusgabe").textContent = jsonText;
+});
+
+document.getElementById("löschBtn").addEventListener("click", function () {
+    let abfrage = confirm("Möchtest du wirklich alle Ladevorgänge löschen?");
+    if (abfrage == true) {
+        ladevorgänge = [];
+        localStorage.setItem("ladevorgänge", JSON.stringify(ladevorgänge));
+        document.getElementById("jsonAusgabe").textContent = "";
+        listeZeichnen();
+    }
+});
