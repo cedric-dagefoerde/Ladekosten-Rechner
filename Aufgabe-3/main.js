@@ -143,7 +143,7 @@ document.getElementById("löschBtn").addEventListener("click", function () {
     let abfrage = confirm("Möchtest du wirklich alle Ladevorgänge löschen?");
     if (abfrage == true) {
         ladevorgänge = [];
-        localStorage.setItem("ladevorgänge", JSON.stringify(ladevorgänge));
+        localStorage.setItem("meineLadevorgänge", JSON.stringify(ladevorgänge));
         document.getElementById("jsonAusgabe").textContent = "";
         listeZeichnen();
     }
